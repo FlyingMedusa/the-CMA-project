@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Project Home Page{% endblock %}
+{% block content %}
+<br><br><br>
+<image class="logo" src="{{ url_for('static', filename='images/Logo_main.png') }}"></image>
+<h4>How does the Cognitive Metaphor Graph Generator work?</h4>
+<p>The 'mechanism' is quite simple:</p>
+<ol>
+    <li>Please click 'Login/Upload' on the navbar and enter your name</li>
+    <li>You will be moved to the user page, upload a csv file there. Requirements:</li>
+    <ul>
+        <li>Each row should contain a quote and a cognitive metaphor</li>
+        <li>A cognitive metaphor should be: X is Y, or a X is an Y, etc.</li>
+        <li>X and Y (metaphor domains) HAVE TO be in capital letters</li>
+    </ul>
+    <li>After a successful upload, you will be redirected to the graph-creation section</li>
+    <li>The program will generate frequency data and a graph</li>
+</ol>
+
+<br>
+<p><b>Temporary:</b> Please upload the .csv file as metaphors.csv</p>
+<br>
+<br>
+<p><i>Alpha version</i></p>
+{% endblock %}

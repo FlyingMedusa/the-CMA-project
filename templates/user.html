@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Project User Page{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+<br>
+<p>Welcome, {{user}}</p>
+<h4>Upload your CSV file here</h4>
+<div class="container">
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+    <div>
+        <label for="inputFile">File input ~below~</label>
+        <p><input type="file" name="inputFile"></p>
+    </div>
+    <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

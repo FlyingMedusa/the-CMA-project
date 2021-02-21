@@ -1,0 +1,85 @@
+body{
+    background-color: #cee4e2;
+}
+
+h1.base{
+    text-align: center;
+    background-color: #327973;
+    color: white;
+}
+
+h3{
+    text-align: center;
+}
+
+h3.base{
+    text-align: center;
+    background-color: #3fa8a0;
+    color: white;
+}
+
+h4{
+    text-indent: 3%;
+}
+
+h5{
+    text-indent: 10%;
+}
+
+p{
+    color: rgb(70, 70, 70);
+    text-indent: 3%;
+}
+
+table.target, tr.target{
+    background-color: aliceblue;
+    border: 1px solid darkgray;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr.head{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+th.dom{
+    padding-left: 20px;
+}
+
+th.freq{
+    text-align: center;
+}
+
+td.dom{
+    padding-left: 30px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+td.freq{
+    text-align: center;
+}
+
+
+table.target {
+    width: 50%;
+}
+
+img{
+    border: 1px solid darkgray;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+img.logo{
+    position: fixed;
+    width: 450px;
+    border: 0px;
+    right: 40px;
+    top: 130px;
+    z-index: -1;
+
+}
