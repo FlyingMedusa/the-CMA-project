@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}CMA Upload{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+<image class="logo" src="{{ url_for('static', filename='images/Logo_main.png') }}"></image>
+<br>
+<h3>Upload your XLS file here</h3>
+<div class="instructions">
+    <form method="POST" action="/uploader" enctype="multipart/form-data">
+    <div>
+        <label for="inputFile">File input ~below~</label>
+        <p><input type="file" name="inputFile"></p>
+    </div>
+    <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

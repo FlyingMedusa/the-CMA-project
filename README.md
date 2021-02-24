@@ -1,2 +1,1 @@
-"# CognitiveMetaphors" 
-"# Metaphors" 
+"# Cognitive_Metaphors" 

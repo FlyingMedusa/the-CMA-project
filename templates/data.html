@@ -1,52 +1,77 @@
 {% extends "base.html" %}
-{% block title %}Login Page{% endblock %}
+{% block title %}CMA Data{% endblock %}
 {% block content %}
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for msg in messages %}
-                <p>{{msg}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-    <h3>Statistic data and graphs:</h3>
-    <br>
-    <br>
-    <h4>1. DATA</h4>
-    <br>
+<br>
 
-    <h5>5 most frequent target domains</h5>
-    <table class="target">
-        <tr class="head">
-            <th class="dom">TARGET DOMAIN</th>
-            <th class="freq">FREQUENCY</th>
-        </tr>
-    {% for el in target_top5: %}
-        <tr class="target">
-            <td class="dom">    {{el[0]}}</td>
-            <td class="freq">{{el[1]}}</td>
-        </tr>
-    {% endfor %}
-    </table>
+<p class="centered"><b>Disclaimer:</b> All of the frequencies are presented for up to 25 top elements only.</p>
 
-    <br>
-    <h5>5 most frequent source domains</h5>
-    <table class="target">
-        <tr class="head">
-            <th class="dom">SOURCE DOMAIN</th>
-            <th class="freq">FREQUENCY</th>
-        </tr>
-    {% for elem in source_top5: %}
-        <tr class="target">
-            <td class="dom">    {{elem[0]}}</td>
-            <td class="freq">{{elem[1]}}</td>
-        </tr>
-    {% endfor %}
-    </table>
-    <br>
-    <h4>2. GRAPHS</h4>
-    <br>
-    <image src="{{ url_for('static', filename='images/graph1.png') }}"></image>
-    <br>
-    <br>
+<h5><b>Mappings</b> sorted by frequency</h5>
+<table class="target">
+    <tr class="head">
+        <th class="freq">FREQ</th>
+        <th>Target Domain</th>
+        <th>Source Domain</th>
+        <th>Mapping</th>
+    </tr>
+{% for mapping in ts_top: %}
+    <tr class="target">
+        <td class="freq">{{mapping[0][1]}}</td>
+        <td>{{mapping[0][0][0]}}</td>
+        <td>{{mapping[0][0][1]}}</td>
+        <td>{{mapping[1]}}</td>
+    </tr>
+{% endfor %}
+</table>
+<br>
+
+<h5><b>Target domains</b> sorted by frequency</h5>
+<table class="target">
+    <tr class="head">
+        <th class="freq">FREQ</th>
+        <th>Target Domain</th>
+    </tr>
+{% for mapping in target: %}
+    <tr class="target">
+        <td class="freq">{{mapping[1]}}</td>
+        <td>{{mapping[0]}}</td>
+    </tr>
+{% endfor %}
+</table>
+<br>
+
+<h5><b>Source domains</b> sorted by frequency</h5>
+<table class="target">
+    <tr class="head">
+        <th class="freq">FREQ</th>
+        <th>Source Domain</th>
+    </tr>
+{% for mapping in source: %}
+    <tr class="target">
+        <td class="freq">{{mapping[1]}}</td>
+        <td>{{mapping[0]}}</td>
+    </tr>
+{% endfor %}
+</table>
+<br>
+
+<h5><b>Graphs</b></h5>
+<br>
+<h5><b>Abstractness</b> [Target Domain][Source Domain]</h5>
+<p class="centered">A - abstract, C - concrete</p>
+<br>
+<image src="{{ url_for('static', filename='images/graph1.png') }}"></image>
+<br>
+
+<h5><b>Abstractness</b> [Target Domain]</h5>
+<p class="centered">A - abstract, C - concrete</p>
+<br>
+<image src="{{ url_for('static', filename='images/graph2.png') }}"></image>
+<br>
+
+<h5><b>Abstractness</b> [Source Domain]</h5>
+<p class="centered">A - abstract, C - concrete</p>
+<br>
+<image src="{{ url_for('static', filename='images/graph3.png') }}"></image>
+<br>
 
 {% endblock %}

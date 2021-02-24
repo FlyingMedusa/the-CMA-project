@@ -12,23 +12,25 @@ h3{
     text-align: center;
 }
 
-h3.base{
+
+h4.bottom{
     text-align: center;
     background-color: #3fa8a0;
     color: white;
 }
 
-h4{
-    text-indent: 3%;
-}
 
 h5{
-    text-indent: 10%;
+    text-align: center;
 }
 
 p{
     color: rgb(70, 70, 70);
     text-indent: 3%;
+}
+
+p.centered{
+    text-align: center;
 }
 
 table.target, tr.target{
@@ -75,11 +77,22 @@ img{
 }
 
 img.logo{
-    position: fixed;
-    width: 450px;
+    width: 400px;
     border: 0px;
-    right: 40px;
+    margin-left: auto;
+    margin-right: auto;
     top: 130px;
-    z-index: -1;
 
+}
+
+img.excel{
+    width: 85%;
+}
+
+div.instructions{
+    padding: 0.01em 16px;
+    width: 800px;
+    background-color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
 }

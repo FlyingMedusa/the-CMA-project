@@ -1,25 +1,34 @@
 {% extends "base.html" %}
-{% block title %}Project Home Page{% endblock %}
+{% block title %}CMA Home Page{% endblock %}
 {% block content %}
-<br><br><br>
 <image class="logo" src="{{ url_for('static', filename='images/Logo_main.png') }}"></image>
-<h4>How does the Cognitive Metaphor Graph Generator work?</h4>
+<br>
+<h3>How does the Cognitive Metaphor Graph Generator work?</h3>
+<div class="instructions">
 <p>The 'mechanism' is quite simple:</p>
 <ol>
-    <li>Please click 'Login/Upload' on the navbar and enter your name</li>
-    <li>You will be moved to the user page, upload a csv file there. Requirements:</li>
+    <li>Please click 'Upload' on the navbar</li>
+    <li>You will be moved to the upload page (who could expect that). Please upload an <b>.xls</b> file there. Requirements:</li>
+<image class="excel" src="{{ url_for('static', filename='images/excel.jpg') }}"></image>
+    <li>What's important when creatng the Excel file:</li>
     <ul>
-        <li>Each row should contain a quote and a cognitive metaphor</li>
-        <li>A cognitive metaphor should be: X is Y, or a X is an Y, etc.</li>
-        <li>X and Y (metaphor domains) HAVE TO be in capital letters</li>
+        <li>Column A: phrase - free formatting </li>
+        <li>Column B: just a target domain</li>
+        <li>Column C: just a source domain</li>
+        <li>Column D: abstractness. Please format as follows:</li>
+        <ul>
+            <li>A - an abstract domain; C - a concrete domain</li>
+            <li>First letter: target domain; Second letter: source domain</li>
+        </ul>
     </ul>
-    <li>After a successful upload, you will be redirected to the graph-creation section</li>
-    <li>The program will generate frequency data and a graph</li>
+    <li>After a successful upload, you will be redirected to the tables and graphs section</li>
+    <li>The program will generate frequency data</li>
 </ol>
 
 <br>
-<p><b>Temporary:</b> Please upload the .csv file as metaphors.csv</p>
+<p><b>Temporary:</b> Please upload the .xls file as Book1.xls</p>
+</div>
+
 <br>
-<br>
-<p><i>Alpha version</i></p>
+<h4 class="bottom">Shout-out to Victoria Połetek for her constant support in implementing this project!</h4>
 {% endblock %}
