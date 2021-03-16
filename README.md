@@ -40,10 +40,10 @@ It is important to add an empty folder named 'files' in the 'static' folder.
 
 ## Screenshots
 
-![HOME PAGE](./screens/01main.jpg)
+![HOME PAGE](./screens/01main.JPG)
 
-![UPLOAD PAGE](./screens/02upload.jpg)
+![UPLOAD PAGE](./screens/02upload.JPG)
 
-![DATA 01](./screens/03data01.jpg)
+![DATA 01](./screens/03data01.JPG)
 
-![DATA 02](./screens/04data02.jpg)
+![DATA 02](./screens/04data02.JPG)
